@@ -10,8 +10,8 @@ pipeline {
         stage('Build frontend') {
             steps {
                 
-                    sh 'usr/bin/npm install'
-                    sh 'usr/bin/npm run build'
+                    sh '/usr/bin/npm install'
+                    sh '/usr/bin/npm run build'
                 
             }
         }
