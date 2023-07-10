@@ -9,33 +9,33 @@ pipeline {
 
         stage('Build frontend') {
             steps {
-                dir('FRONTEND') {
-                    sh '/usr/bin/npm install'
-                    sh '/usr/bin/npm run build'
-                }
+                
+                    sh 'npm install'
+                    sh 'npm run build'
+                
             }
         }
     
-/*        stage('Test frontend') {
-            steps {
-                dir('FRONTEND') {
-                    sh 'npm run test'
-                }
-            }
-        } */
+
         stage('build'){  
 
-steps{ script{
+steps{ 
 
 sh 'ansible-playbook ansible/build.yml -i ansible/inventry/host.yml'
 
 }   } 
 
 
-      }
-     stage('docker'){ steps{ script{ 
+   
+     stage('docker'){
+             steps{ 
 
 
-       sh "ansible-playbook ansible/docker.yml -i ansible/inventory/host.yml '}}}
+       sh "ansible-playbook ansible/docker.yml -i ansible/inventory/host.yml "
+
+
+}
+       }
+       
 }
 }
