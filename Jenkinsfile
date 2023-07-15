@@ -31,7 +31,7 @@ steps{
              steps{ 
 
 
-       sh "/home/malekgh/.local/bin/ansible-playbook ansible/docker.yml -i ansible/inventory/host.yml "
+       sh "   ansible-playbook /home/malekgh/.local/bin//playbook.yml   ansible/docker.yml -i ansible/inventory/host.yml "
 
 
 }
