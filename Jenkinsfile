@@ -21,7 +21,7 @@ pipeline {
 
 steps{ 
 
-			sh "ansible-playbook ansible/build.yml -i ansible/inventory/host.yml --extra-vars "ansible_become_pass=azerty""
+			sh 'ansible-playbook ansible/build.yml -i ansible/inventory/host.yml --extra-vars "ansible_become_pass=azerty"'
 
 }   } 
 
