@@ -1,6 +1,5 @@
 
-- hosts: localhost
-  localhost = local
+- hosts: local
   gather_facts: true
   become: true
   roles:
