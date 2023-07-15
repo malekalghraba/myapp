@@ -7,11 +7,11 @@ pipeline {
             }
         }
 
-        stage('Build frontend') {
+        stage('Build fron') {
             steps {
                 
                     sh '/usr/bin/npm install'
-                    sh '/usr/bin/npm run build'
+                 //   sh '/usr/bin/npm run build'
                 
             }
         }
@@ -21,21 +21,11 @@ pipeline {
 
 steps{ 
 
-	sh "/home/malekgh/.local/bin/ansible-playbook  ansible/build.yml -i ansible/inventory/host.yml"
+			sh "ansible-playbook ansible/build.yml -i ansible/inventory/host.yml"
 
 }   } 
 
 
-   
-     stage('docker'){
-             steps{ 
-
-
-       sh "/home/malekgh/.local/bin/ansible-playbook ansible/docker.yml -i ansible/inventory/host.yml "
-
-
-}
-       }
-       
+  
 }
 }
